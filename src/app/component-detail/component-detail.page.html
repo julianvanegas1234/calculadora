@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ nombre }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="detail-header">
+    <h1>{{ nombre }}</h1>
+    <ion-badge color="tertiary">Componente Ionic</ion-badge>
+  </div>
+
+  <p class="detail-text">Ejemplo en vivo de este componente:</p>
+
+  <ion-card class="demo-card">
+    <ion-card-content>
+
+      <div *ngIf="nombre === 'button'">
+        <ion-button>Botón de ejemplo</ion-button>
+      </div>
+
+      <div *ngIf="nombre === 'toggle'">
+        <ion-toggle>Activar</ion-toggle>
+      </div>
+
+      <div *ngIf="nombre === 'badge'">
+        <ion-badge color="primary">Nuevo</ion-badge>
+      </div>
+
+      <div *ngIf="nombre === 'chip'">
+        <ion-chip>Chip de ejemplo</ion-chip>
+      </div>
+
+      <div *ngIf="nombre === 'input'">
+        <ion-input label="Escribe algo" placeholder="Texto..."></ion-input>
+      </div>
+
+      <div *ngIf="nombre === 'checkbox'">
+        <ion-checkbox>Marcar</ion-checkbox>
+      </div>
+
+      <div *ngIf="nombre === 'range'">
+        <ion-range min="0" max="100"></ion-range>
+      </div>
+
+      <div *ngIf="nombre === 'progress-bar'">
+        <ion-progress-bar value="0.5"></ion-progress-bar>
+      </div>
+
+      <div *ngIf="!['button','toggle','badge','chip','input','checkbox','range','progress-bar'].includes(nombre)" class="doc-link">
+        <p>Aún no hay demo local para <strong>{{ nombre }}</strong>. Puedes explorar la documentación oficial:</p>
+        <a href="https://ionicframework.com/docs/api/{{ nombre }}" target="_blank">
+          Ver en ionicframework.com →
+        </a>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Componentes Ionic</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar color="primary">
+      <ion-title size="large">Componentes Ionic</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <p class="subtitle">Toca un componente para ver un ejemplo en vivo</p>
+
+  <ion-list lines="none" class="component-list">
+    <ion-item
+      *ngFor="let c of componentes"
+      [routerLink]="['/component-detail', c]"
+      button
+      detail="true"
+      class="component-item">
+      <ion-avatar slot="start" class="icon-wrap">
+        <ion-icon name="apps-outline"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ c }}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
